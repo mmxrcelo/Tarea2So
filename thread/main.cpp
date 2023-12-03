@@ -5,6 +5,7 @@
 
 using namespace cv;
 using namespace std;
+using namespace chrono;
 
 void grayscaleThread(const Mat& input, Mat& output, int startRow, int endRow) {
 
@@ -26,6 +27,9 @@ int main(int argc, char** argv) {
     Mat image = imread(argv[1], IMREAD_COLOR);
     Mat result(image.size(), CV_8UC1);
 
+    // Iniciar el temporizador
+    auto start = chrono::high_resolution_clock::now();
+
     vector<thread> threads;
     int rowsPerThread = image.rows / stoi(argv[3]);
 
@@ -40,6 +44,12 @@ int main(int argc, char** argv) {
     for(auto &t : threads) {
         t.join(); 
     }
+    
+    // Detener el temporizador
+        auto end = chrono::high_resolution_clock::now();
+        chrono::duration<double> duration = end - start;
+
+    cout << "El tiempo de conversión fue " << duration.count() << " segundos" << endl;
 
     imwrite(argv[2], result);
 
