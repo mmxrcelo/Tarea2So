@@ -3,7 +3,7 @@ CXX = g++
 CXXFLAGS = -I/usr/include/opencv4
 LDLIBS = -lopencv_core -lopencv_highgui -lopencv_imgcodecs
 
-# Target principal 
+# Target principal
 grayscale: main.o
     $(CXX) main.o -o grayscale $(LDLIBS)
 

@@ -11,6 +11,6 @@ openmp: main.o
 main.o: main.cpp
     $(CXX) $(CXXFLAGS) -c main.cpp
 
-# Regla para limpiar 
+# Regla para limpiar
 clean:
     rm -f openmp main.o

@@ -1,10 +1,10 @@
 # Definición de variables
 CXX = g++
-CXXFLAGS = -I/usr/include/opencv4 
+CXXFLAGS = -I/usr/include/opencv4
 LDFLAGS = -lopencv_core -lopencv_highgui -lopencv_imgcodecs
 
 # Regla principal: construye el ejecutable
-secuencial: main.o 
+secuencial: main.o
     $(CXX) main.o -o secuencial $(LDFLAGS)
 
 # Regla para compilar main.cpp -> main.o
