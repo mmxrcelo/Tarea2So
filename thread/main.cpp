@@ -2,6 +2,7 @@
 #include <opencv2/highgui.hpp>
 #include <thread>
 #include <vector>
+#include <iostream>
 
 using namespace cv;
 using namespace std;
