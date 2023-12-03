@@ -1,7 +1,7 @@
 # Variables
 CXX = g++
 CXXFLAGS = -I/usr/include/opencv4
-LDLIBS = -lopencv_core -lopencv_highgui -lopencv_imgcodecs
+LDFLAGS = -lopencv_core -lopencv_highgui -lopencv_imgcodecs -pthread
 
 # Target principal
 grayscale: main.o
